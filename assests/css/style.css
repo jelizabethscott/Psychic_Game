@@ -11,16 +11,29 @@ h1{
 	font-size: 150px;
 }	
 
-.img{
+.box{
+	width: 100%;
+	margin-top: 90px;
 	text-align: center;
 }
 
-img{
+.img{
 	margin: auto;
     width: 50%;
-    position: relative; 
+    position: absolute; 
 }
 
+.img2{
+	margin: auto;
+    width: 50%;
+    position: relative;
+    float: right;
+
+}
+
+.container{
+	text-align: center
+}
 h2{
 	color: white;
 	font-weight: bold;
@@ -31,7 +44,6 @@ h2{
    	width: 100%; 
    	text-shadow: 3px 3px #FF0000;
 }
-
 
 .wins{
 	color: white;
@@ -58,7 +70,7 @@ h2{
 .guessesLeft{
 	color: white;
 	font-weight: bold;
-	font-size: 50px;
+	font-size: 35px;
 	position: absolute; 
    	top: 500px; 
    	left: 0; 
@@ -69,7 +81,7 @@ h2{
 .guesses{
 	color: white;
 	font-weight: bold;
-	font-size: 50px;
+	font-size: 35px;
 	position: absolute; 
    	top: 600px; 
    	left: 0; 
