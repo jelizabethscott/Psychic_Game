@@ -45,7 +45,7 @@ h2{
    	text-shadow: 3px 3px #FF0000;
 }
 
-.wins{
+#win{
 	color: white;
 	font-weight: bold;
 	font-size: 50px;
@@ -56,7 +56,7 @@ h2{
    	text-shadow: 3px 3px #FF0000;
 }
 
-.losses{
+#losses{
 	color: white;
 	font-weight: bold;
 	font-size: 50px;
@@ -67,7 +67,7 @@ h2{
    	text-shadow: 3px 3px #FF0000;
 }
 
-.guessesLeft{
+#guesses{
 	color: white;
 	font-weight: bold;
 	font-size: 35px;
@@ -78,7 +78,7 @@ h2{
    	text-shadow: 3px 3px #FF0000;
 }
 
-.guesses{
+#guess{
 	color: white;
 	font-weight: bold;
 	font-size: 35px;

@@ -3,8 +3,10 @@ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l',
 
 // Variables for tracking our wins, losses and ties. They begin at 0.
 var wins = 0;
-var losses = 0;
-var guesses = 10;
+var lost = 0;
+var guessesLeft = 10;
+var guessed = 0;
+
 
     var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 
@@ -13,19 +15,42 @@ var guesses = 10;
 
 
    // When the user presses a key, it will run the following function...
-document.onkeypress = function(event) {
+document.body.onkeypress = function(event) {
     var userGuess = event.key;
+
+    guessesLeft--;
+    var guessesLeftElement = document.getElementById("guessesLeft");
+    guessesLeftElement.textContent = guessesLeft;
+
+    //guessed++;
+    //var guessedElement = document.getElementById("guessed");
+    //guessedElement.textContent = guessed;
+
+
 
     if(userGuess === computerChoice){
         wins++;
-    }else{
-        guesses--;
-    }
+        var winsElement = document.getElementById("wins");
+        winsElement.textContent = wins;
 
-    if(guesses = 0){
-        losses++
+        guessesLeft = 10;
+        var guessesLeftElement = document.getElementById('guessesLeft');
+        guessesLeftElement.textContent = guessesLeft;
+
+    }else{
+
+    if(guessesLeft === 0){
+        lost++;
+        var lostElement = document.getElementById("lost")
+        lostElement.textContent = lost;
+
+        guessesLeft = 10;
+        var guessesLeftElement = document.getElementById('guessesLeft');
+        guessesLeftElement.textContent = guessesLeft;
+
+       
+
     }
-}   
-    document.getElementById('wins').innerHTML = "wins " + wins;
-    document.getElementById('losses').innerHTML = "losses: " + losses;
-    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+    
+    }
+}
