@@ -5,30 +5,30 @@ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l',
 var wins = 0;
 var lost = 0;
 var guessesLeft = 10;
-var guessed = 0;
+var guessesSoFar = ('');
 
 
     var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
 
-    console.log(computerChoice)
-
-
+    console.log(computerChoice);
+    
 
    // When the user presses a key, it will run the following function...
 document.body.onkeypress = function(event) {
-    var userGuess = event.key;
+   
+    var guessed = event.key;
 
     guessesLeft--;
     var guessesLeftElement = document.getElementById("guessesLeft");
     guessesLeftElement.textContent = guessesLeft;
 
-    //guessed++;
-    //var guessedElement = document.getElementById("guessed");
-    //guessedElement.textContent = guessed;
+    guessesSoFar += guessed;
+    var guessedElement = document.getElementById("guessed");
+    guessedElement.textContent = guessesSoFar;
 
 
 
-    if(userGuess === computerChoice){
+    if(guessed === computerChoice){
         wins++;
         var winsElement = document.getElementById("wins");
         winsElement.textContent = wins;
@@ -36,6 +36,17 @@ document.body.onkeypress = function(event) {
         guessesLeft = 10;
         var guessesLeftElement = document.getElementById('guessesLeft');
         guessesLeftElement.textContent = guessesLeft;
+
+        guessesSoFar = '';
+        var guessedElement = document.getElementById("guessed");
+        guessedElement.textContent = guessesSoFar;
+
+        alert("You Are The winner... This time!!!");
+
+        computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+        console.log(computerChoice);
+
+
 
     }else{
 
@@ -47,6 +58,14 @@ document.body.onkeypress = function(event) {
         guessesLeft = 10;
         var guessesLeftElement = document.getElementById('guessesLeft');
         guessesLeftElement.textContent = guessesLeft;
+
+        guessesSoFar = '';
+        var guessedElement = document.getElementById("guessed");
+        guessedElement.textContent = guessesSoFar;
+
+        computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+        console.log(computerChoice);
+
 
        
 
